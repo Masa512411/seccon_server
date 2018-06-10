@@ -5,12 +5,9 @@ app = Flask(__name__)
 
 @app.route("/agent",methods=["GET","POST"])
 def main():
-    req = request.headers
+    req = request.headers.get("User-Agent")
 #    req = req.decode("utf-8")
-    with open("./templates/agent.html","w") as f:
-        string = "<p>{}</p>".format(str(req))
-        f.write(string)
-    return render_template("agent.html")
+    print(req)
 
 @app.route("/check")
 def che():
