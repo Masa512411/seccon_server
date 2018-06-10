@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route("/agent",methods=["GET","POST"])
 def main():
-    req = request.data
-    req = req.decode("utf-8")
+    req = request.headers
+#    req = req.decode("utf-8")
     with open("./templates/agent.html","w") as f:
         string = "<p>{}</p>".format(str(req))
         f.write(string)
