@@ -7,6 +7,10 @@ app = Flask(__name__)
 def main():
     return request.data
 
+@app.route("/check")
+def che():
+    return "<p> Hello</p>"
+
 if __name__ == "__main__":
      port = int(os.environ.get("PORT",5000))
          
