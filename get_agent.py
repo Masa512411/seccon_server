@@ -7,8 +7,7 @@ app = Flask(__name__)
 def main():
     req = request.headers.get("User-Agent")
 #    req = req.decode("utf-8")
-    print(req)
-
+    return req
 @app.route("/check")
 def che():
     return render_template("agent.html")
